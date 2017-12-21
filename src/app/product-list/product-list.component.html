@@ -1,0 +1,53 @@
+<mat-card class="table-head">
+  <mat-card-title> {{PageTitle}}</mat-card-title>
+</mat-card>
+
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter By">
+      </mat-form-field>
+    </div>
+
+<mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+            <button mat-raised-button color="primary">Show</button>
+        </mat-header-cell>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="productId">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.productId}} </mat-cell>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="productName">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.productName}} </mat-cell>
+    </ng-container>
+
+    
+    
+    <ng-container matColumnDef="productCode">
+      <mat-header-cell *matHeaderCellDef> code </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{products.productCode}} </mat-cell>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="starRating">
+        <mat-header-cell *matHeaderCellDef> 5 star rating  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.starRating}} </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,0 +1,30 @@
+.table-head{
+    background-color: rgb(11, 7, 223) !important;
+    padding: 5px !important;
+    color: antiquewhite;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
