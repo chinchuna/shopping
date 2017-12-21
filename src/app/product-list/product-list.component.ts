@@ -11,6 +11,7 @@ import {MatTableDataSource} from '@angular/material';
 
 export class ProductListComponent implements OnInit {
   PageTitle: String= 'Product List..!';
+  showImage: Boolean= false;
   displayedColumns = ['select', 'productId', 'productName', 'productCode', 'price', 'starRating'];
   products: any[]= [
     {
@@ -65,11 +66,20 @@ export class ProductListComponent implements OnInit {
     }
 ];
 dataSource = new MatTableDataSource(this.products);
+Show_Image(): void {
+    this.showImage = ! this.showImage;
+}
+
+applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
+
   constructor() { }
 
   ngOnInit() {
   }
-
-
 
 }

@@ -13,8 +13,9 @@
 
     <ng-container matColumnDef="select">
         <mat-header-cell *matHeaderCellDef>
-            <button mat-raised-button color="primary">Show</button>
+            <button mat-raised-button color="primary" (click)=Show_Image()>{{showImage? 'Hide':'Show'}} Image</button>
         </mat-header-cell>
+        <mat-cell *matCellDef="let element"><img src={{element.imageUrl}} width=50 height=50 *ngIf=showImage/> </mat-cell>
     </ng-container>
 
     
@@ -33,13 +34,13 @@
     
     <ng-container matColumnDef="productCode">
       <mat-header-cell *matHeaderCellDef> code </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{products.productCode}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.productCode| lowercase}} </mat-cell>
     </ng-container>
 
     
     <ng-container matColumnDef="price">
       <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.price| currency}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="starRating">
