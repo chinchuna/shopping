@@ -45,7 +45,7 @@
 
     <ng-container matColumnDef="starRating">
         <mat-header-cell *matHeaderCellDef> 5 star rating  </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.starRating}} </mat-cell>
+        <mat-cell *matCellDef="let element"> <app-star [ratings]='element.starRating'></app-star> </mat-cell>
       </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
