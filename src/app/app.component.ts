@@ -3,8 +3,7 @@ import { providerDef } from '@angular/core/src/view/provider';
 
 @Component({
   selector: 'app-root',
-  template: `<div><h1>{{ pageTitle }}</h1><div><app-product-list></app-product-list></div>
-   `
+  templateUrl: 'app.component.html'
 
   // styleUrls: ['./app.component.css']
 })

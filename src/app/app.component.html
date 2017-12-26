@@ -1,2 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-hello
+
+<mat-toolbar color="primary" class="word">
+        
+    {{ pageTitle |uppercase }}
+        
+<a [routerLink]="['/welcome']">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;</a>
+<a [routerLink]="['/products']">&nbsp;&nbsp;Product</a>        
+
+</mat-toolbar>
+<div><div></div>
+<!-- <app-product-list></app-product-list></div> -->
+<mat-card>
+    <router-outlet></router-outlet>
+</mat-card>
+</div>
